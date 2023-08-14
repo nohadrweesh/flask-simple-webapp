@@ -8,8 +8,11 @@ spec:
     name: my-pod
     ports:
     - containerPort: 8081
-    env:
-    - name: APP_COLOR
-      value: "pink"
+    # env:
+    # - name: APP_COLOR
+    #   value: "pink"
+    envFrom:
+    - configMapRef:
+        name: env-configmap
 
 status: {}
